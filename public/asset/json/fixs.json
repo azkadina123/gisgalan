@@ -8,7 +8,8 @@
         "district": "KOTA TEGAL",
         "sub_district": "TEGAL BARAT",
         "kode_district" : "4",
-        "village": "PESURUNGAN KIDUL"
+        "village": "PESURUNGAN KIDUL",
+        "kode_village" : "14"
       },
       "geometry": {
         "type": "Polygon",
@@ -109,7 +110,8 @@
         "district": "KOTA TEGAL",
         "sub_district": "TEGAL BARAT",
         "kode_district" : "4",
-        "village": "DEBONG LOR"
+        "village": "DEBONG LOR",
+        "kode_village" : "1"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -310,7 +312,8 @@
         "district": "KOTA TEGAL",
         "sub_district": "TEGAL BARAT",
         "kode_district" : "4",
-        "village": "KEMANDUNGAN"
+        "village": "KEMANDUNGAN",
+        "kode_village" : "10"
       },
       "geometry": {
         "type": "Polygon",
@@ -383,7 +386,8 @@
         "district": "KOTA TEGAL",
         "sub_district": "TEGAL BARAT",
         "kode_district" : "4",
-        "village": "PEKAUMAN"
+        "village": "PEKAUMAN",
+        "kode_village" : "13"
       },
       "geometry": {
         "type": "Polygon",

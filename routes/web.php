@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DataMaps;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,14 +32,14 @@ Route::resource('/keloladataakun', 'DataakunController');
 
 
 
-Route::resource('/permintaanverifikasi', 'permintaanController'); 
+Route::resource('/permintaanverifikasi', 'permintaanController');
 
 
 Route::resource('/statuspermintaan', 'statuspermintaanController');
 
 
 Route::resource('/keloladatapenyakit', 'KeloladatapenyakitController');
-    
+
 
 Route::get('/grafik', function () {
     return view('dashboard/grafik');
@@ -57,11 +58,15 @@ Route::get('/peta', function () {
 Route::get('/tes', function () {
     return view('masyarakat/tes');
 });
-    
+
 Auth::routes();
 
 Route::get('/home1', 'HomeController@index')->name('home');
 Route::get('/getKecamatan', [DataMaps::class, 'getKecamatan']);
+Route::any('/getDataModal', [DataMaps::class, 'getKecamatanId']);
 Route::get('/maps', function () {
     return view('maps');
+});
+Route::get('/maps1', function () {
+    return view('map/mapview');
 });
