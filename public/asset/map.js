@@ -112,13 +112,13 @@
 
             '</div>';
 
-        layer.bindPopup(popup);
+        // layer.bindPopup(popup);
 
     }
 
-    mymap.on('click', function(e) {
-        alert("Lat, Lon : " + e.latlng.lat + ", " + e.latlng.lng)
-    });
+    // mymap.on('click', function(e) {
+    //     alert("Lat, Lon : " + e.latlng.lat + ", " + e.latlng.lng)
+    // });
     function show() {
         // alert(this.data('id_desa'))
         console.log($(this).data('id_desa'));
@@ -192,9 +192,9 @@
 
     function zoomToFeature(e) {
         mymap.fitBounds(e.target.getBounds());
-    console.log(e.target.feature);
-    let _token = $('meta[name="csrf-token"]').attr('content');
-    let data = e.target.feature
+        console.log(e.target.feature);
+        let _token = $('meta[name="csrf-token"]').attr('content');
+        let data = e.target.feature
         $.ajax({
             type: "post",
             url: "/getDataModal",
@@ -213,6 +213,10 @@
                     subtitle: {
                         text: 'Data Kelurahan'
                     },
+                    series: [{
+                        name: 'KASUS',
+                        data:response.chart
+                    }]
                 });
                 
             }
