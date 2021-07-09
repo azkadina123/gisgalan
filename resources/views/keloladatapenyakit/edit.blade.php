@@ -24,7 +24,7 @@ editdatapenyakit
                         </div>
                         <div class="body">
 							@csrf
-                            <form action="/keloladatapenyakit/{{$penyakit->id}}" method="POST">
+                            <form action="{{route('keloladatapenyakit.update', $penyakit->id) }}" method="POST">
                                 @csrf
                                 @method('PUT')
                             <div class="row clearfix">

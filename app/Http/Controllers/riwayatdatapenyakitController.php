@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\kelurahan;
 use App\kecamatan;
 use App\datapenyakit;
+use App\dataakun;
 use Illuminate\Support\Facades\Auth;
 
 class riwayatdatapenyakitController extends Controller

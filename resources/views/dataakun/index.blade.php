@@ -67,7 +67,7 @@ keloladataakun
                       <td>{{$item->jenis_instansi}}</td>
                       <td>
                         <a class="btn btn-info" href="{{$item->id}}/detail">Detail</a>
-                        <a class="btn btn-primary" href="/keloladatapenyakit/{{$item->id}}/edit">Edit</a>
+                        {{-- <a class="btn btn-primary" href="/keloladatapenyakit/{{$item->id}}/edit">Edit</a> --}}
                         <button type="button" class="btn btn-danger waves-effect" data-toggle="modal" data-target="#smallModal{{$item->id}}">Hapus</button>
 										<div class="modal fade" id="smallModal{{$item->id}}" tabindex="-1" role="dialog">
 										<div class="modal-dialog modal-sm" role="document">

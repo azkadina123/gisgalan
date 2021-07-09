@@ -24,7 +24,9 @@
                     <!-- <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#featureModal">
                         Launch demo modal
                     </button> -->
-                    <div id="mapid"></div>
+                    <div id="mapid">
+                        
+                    </div>
                 </div>
             </div>
         </div>
@@ -45,6 +47,61 @@
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
+    <div class="card card-default">
+        <div class="card-header">
+          <h3 class="card-title">Data Statistik</h3>
+        </div>
+    </div>
+        <!-- /.card-header -->
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Nama Penyakit</label>
+                <select class="form-control select2bs4" style="width: 100%;">
+                  <option selected="selected"></option>
+                  <option>TBC</option>
+                  <option>Pneunomia</option>
+                  <option>HIV/AIDS</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /.form-group -->
+          <div class="card-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                <label>Jenis Data</label>
+                <select class="form-control select2bs4" style="width: 100%;">
+                   <option selected="selected"></option>
+                    <option>Tertinggi</option>
+                    <option>Terendah</option>
+                </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+                    <div class="card-body">
+                        <div class="row">
+                          <div class="col-md-6">
+                            <div class="form-group">
+                              <label>Usia</label>
+                              <select class="form-control select2bs4" style="width: 100%;">
+                                <option selected="selected"></option>
+                                <option>Balita</option>
+                                <option>Remaja</option>
+                                <option>Dewasa</option>
+                                <option>Lansia</option>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-primary waves-effect" type="submit">CARI</button>
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <!-- <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script> -->

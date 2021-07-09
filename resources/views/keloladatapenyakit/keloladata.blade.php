@@ -25,12 +25,12 @@ keloladatapenyakit
 @section('header-content')
 <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Daftar Akun</h1>
+            <h1>Daftar Data Penyakit</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Daftar Akun</li>
+              <li class="breadcrumb-item active">Daftar Data Penyakit</li>
             </ol>
           </div>
         </div>
@@ -43,7 +43,7 @@ keloladatapenyakit
             <div class="card">
               <div class="card-header">
                 <h3 class="card-title">DataTable with minimal features & hover style</h3>
-                <a href="keloladatapenyakit/create"class="btn btn-sm btn-primary float-sm-right">Tambah Akun</a>
+                <a href="keloladatapenyakit/create"class="btn btn-sm btn-primary float-sm-right">Tambah Data Penyakit</a>
               </div>
               <!-- /.card-header -->
               <div class="card-body">

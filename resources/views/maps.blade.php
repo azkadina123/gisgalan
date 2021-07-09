@@ -44,6 +44,8 @@
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 
+
+
 <!-- <script src="http://dukuhwaru.tegalkab.go.id/assets/Frontend/page/geoJs.js"></script> -->
 <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> -->
 <!-- <script data-require="bootstrap" data-semver="3.3.6" src="{{ asset('/assets/bootstrap/js/bootstrap.min.js') }}"></script> -->

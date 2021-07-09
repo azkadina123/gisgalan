@@ -541,7 +541,9 @@
         "district": "KOTA TEGAL",
         "sub_district": "TEGAL BARAT",
         "kode_district" : "4",
-        "village": "KRATON"
+        "village": "KRATON",
+        "kode_village" : "11"
+
       },
       "geometry": {
         "type": "Polygon",
@@ -662,7 +664,9 @@
         "district": "KOTA TEGAL",
         "sub_district": "TEGAL BARAT",
         "kode_district" : "4",
-        "village": "TEGALSARI"
+        "village": "TEGALSARI",
+        "kode_village" : "15"
+
       },
       "geometry": {
         "type": "Polygon",
@@ -764,7 +768,9 @@
         "district": "KOTA TEGAL",
         "sub_district": "TEGAL BARAT",
         "kode_district" : "4",
-        "village": "MUARAREJA"
+        "village": "MUARAREJA",
+        "kode_village" : "12"
+
       },
       "geometry": {
         "type": "Polygon",
@@ -872,7 +878,9 @@
         "district": "KOTA TEGAL",
         "sub_district": "TEGAL TIMUR",
         "kode_district" : "4",
-        "village": "KEJAMBON"
+        "village": "KEJAMBON",
+        "kode_village" : "24"
+
       },
       "geometry": {
         "type": "Polygon",
@@ -1219,7 +1227,9 @@
         "district": "KOTA TEGAL",
         "sub_district": "TEGAL TIMUR",
         "kode_district" : "4",
-        "village": "PANGGUNG"
+        "village": "PANGGUNG",
+        "kode_village" : ""
+
       },
       "geometry": {
         "type": "Polygon",
@@ -1427,7 +1437,9 @@
         "district": "KOTA TEGAL",
         "sub_district": "TEGAL TIMUR",
         "kode_district" : "4",
-        "village": "MANGKUKUSUMAN"
+        "village": "MANGKUKUSUMAN",
+        "kode_village" : "25"
+
       },
       "geometry": {
         "type": "Polygon",
@@ -1552,7 +1564,9 @@
         "district": "KOTA TEGAL",
         "sub_district": "TEGAL TIMUR",
         "kode_district" : "4",
-        "village": "MINTARAGEN"
+        "village": "MINTARAGEN",
+        "kode_village" : "26"
+
       },
       "geometry": {
         "type": "Polygon",
@@ -1686,7 +1700,9 @@
         "district": "KOTA TEGAL",
         "sub_district": "TEGAL SELATAN",
         "kode_district" : "3",
-        "village": "KALINYAMAT WETAN"
+        "village": "KALINYAMAT WETAN",
+        "kode_village" : "20"
+
       },
       "geometry": {
         "type": "Polygon",
@@ -1783,7 +1799,9 @@
         "district": "KOTA TEGAL",
         "sub_district": "TEGAL SELATAN",
         "kode_district" : "3",
-        "village": "BANDUNG"
+        "village": "BANDUNG",
+        "kode_village" : "16"
+
       },
       "geometry": {
         "type": "Polygon",
@@ -1883,7 +1901,9 @@
         "district": "KOTA TEGAL",
         "sub_district": "TEGAL SELATAN",
         "kode_district" : "3",
-        "village": "DEBONG KIDUL"
+        "village": "DEBONG KIDUL",
+        "kode_village" : "17"
+
       },
       "geometry": {
         "type": "Polygon",
@@ -1970,7 +1990,9 @@
         "district": "KOTA TEGAL",
         "sub_district": "TEGAL SELATAN",
         "kode_district" : "3",
-        "village": "TUNON"
+        "village": "TUNON",
+        "kode_village" : "23"
+
       },
       "geometry": {
         "type": "Polygon",
@@ -2057,7 +2079,9 @@
         "district": "KOTA TEGAL",
         "sub_district": "TEGAL SELATAN",
         "kode_district" : "3",
-        "village": "KETUREN"
+        "village": "KETUREN",
+        "kode_village" : "21"
+
       },
       "geometry": {
         "type": "Polygon",
@@ -2133,7 +2157,9 @@
         "district": "KOTA TEGAL",
         "sub_district": "TEGAL SELATAN",
         "kode_district" : "3",
-        "village": "DEBONG KULON"
+        "village": "DEBONG KULON",
+        "kode_village" : "18"
+
       },
       "geometry": {
         "type": "Polygon",
@@ -2277,7 +2303,9 @@
         "district": "KOTA TEGAL",
         "sub_district": "TEGAL SELATAN",
         "kode_district" : "3",
-        "village": "DEBONG TENGAH"
+        "village": "DEBONG TENGAH",
+        "kode_village" : "19"
+
       },
       "geometry": {
         "type": "Polygon",
@@ -2428,7 +2456,9 @@
         "district": "KOTA TEGAL",
         "sub_district": "TEGAL SELATAN",
         "kode_district" : "3",
-        "village": "RANDUGUNTING"
+        "village": "RANDUGUNTING",
+        "kode_village" : "22"
+
       },
       "geometry": {
         "type": "Polygon",
@@ -2560,7 +2590,9 @@
         "district": "KOTA TEGAL",
         "sub_district": "MARGADANA",
         "kode_district" : "1",
-        "village": "KALIGANGSA"
+        "village": "KALIGANGSA",
+        "kode_village" : "4"
+
       },
       "geometry": {
         "type": "Polygon",
@@ -2754,7 +2786,9 @@
         "district": "KOTA TEGAL",
         "sub_district": "MARGADANA",
         "kode_district" : "1",
-        "village": "KRANDON"
+        "village": "KRANDON",
+        "kode_village" : "6"
+
       },
       "geometry": {
         "type": "Polygon",
@@ -2863,7 +2897,9 @@
         "district": "KOTA TEGAL",
         "sub_district": "MARGADANA",
         "kode_district" : "1",
-        "village": "CABAWAN"
+        "village": "CABAWAN",
+        "kode_village" : "3"
+
       },
       "geometry": {
         "type": "Polygon",
@@ -2968,7 +3004,9 @@
         "district": "KOTA TEGAL",
         "sub_district": "MARGADANA",
         "kode_district" : "1",
-        "village": "KALINYAMAT KULON"
+        "village": "KALINYAMAT KULON",
+        "kode_village" : "5"
+
       },
       "geometry": {
         "type": "Polygon",
@@ -3087,7 +3125,9 @@
         "district": "KOTA TEGAL",
         "sub_district": "MARGADANA",
         "kode_district" : "1",
-        "village": "MARGADANA"
+        "village": "MARGADANA",
+        "kode_village" : "7"
+
       },
       "geometry": {
         "type": "Polygon",
@@ -3197,7 +3237,9 @@
         "district": "KOTA TEGAL",
         "sub_district": "MARGADANA",
         "kode_district" : "1",
-        "village": "SUMURPANGGANG"
+        "village": "SUMURPANGGANG",
+        "kode_village" : "8"
+
       },
       "geometry": {
         "type": "Polygon",
@@ -3305,7 +3347,9 @@
         "district": "KOTA TEGAL",
         "sub_district": "MARGADANA",
         "kode_district" : "1",
-        "village": "PESURUNGAN LOR"
+        "village": "PESURUNGAN LOR",
+        "kode_village" : "1"
+
       },
       "geometry": {
         "type": "Polygon",
