@@ -65,8 +65,11 @@ Route::get('/home1', 'HomeController@index')->name('home');
 Route::get('/getKecamatan', [DataMaps::class, 'getKecamatan']);
 Route::any('/getDataModal', [DataMaps::class, 'getKecamatanId']);
 Route::get('/maps', function () {
-    return view('maps');
+    return view('map/mapview1');
 });
 Route::get('/maps1', function () {
     return view('map/mapview');
+});
+Route::get('/maps2', function () {
+    return view('maps1');
 });
