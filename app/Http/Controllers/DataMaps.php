@@ -31,10 +31,11 @@ class DataMaps extends Controller
         // $id_desa = $request->id_desa;
         $query = datapenyakit::select(DB::raw("COUNT(*) as count, nama_penyakit"))
             ->whereYear('created_at', date('Y'));
-        if ($request->id_desa !== '') {
+        if (isset($request->id_desa)) {
             $query->where('kelurahan', $request->id_desa);
             $get = AppKelurahan::find($request->id_desa);
-        } else if ($request->id_kecamatan) {
+        }
+        if (isset($request->id_kecamatan)) {
             $query->where('kecamatan', $request->id_kecamatan);
             $get = kecamatan::find($request->id_kecamatan);
         }
@@ -56,8 +57,8 @@ class DataMaps extends Controller
     public function getFilter(Request $request)
     {
         $wilayah = $request->wilayah;
-        $penyakit = $request->usia;
-        $usia = $request->penyakit;
+        $penyakit = $request->penyakit;
+        $usia = $request->usia;
         $query = DB::table('datapenyakits');
         if ($wilayah == 'kecamatan') {
             $query->select('kecamatan');

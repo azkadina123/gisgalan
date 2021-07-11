@@ -67,7 +67,7 @@ var overlays = {
     "Kuning": yellow,
     // "Hijau": green,
 };
-//    var Lyer =   L.control.layers(baseLayers, overlays).addTo(mymap);
+var Lyer = L.control.layers(baseLayers, overlays).addTo(mymap);
 
 var info = L.control();
 info.onAdd = function (map) {
@@ -96,31 +96,6 @@ function onEachFeature(feature, layer) {
         mouseout: resetHightlight,
         click: zoomToFeature
     });
-    // var popupContent = "<p>I started out as a GeoJSON " +
-    //     feature.geometry.type + ", but now I'm a Leaflet vector!</p>";
-
-    if (feature.properties && feature.properties.popupContent) {
-        popupContent += feature.properties.popupContent;
-    }
-    let data = feature.properties;
-    var popup = '<div class="list-group list-group-flush">' +
-        // '<a href="#" class="list-group-item list-group-item-action flex-column align-items-start bg-' + data.color_zona + '">' +
-        '<div class="d-flex w-100 justify-content-center">' +
-        '<h6 class="mb-1">KEC. ' + data.village + '</h6>' +
-        '</div>' +
-        '</a>' +
-        '<div class="list-group-item list-group-item-action flex-column align-items-start pt-1 pb-1 pl-2 pr-2">' +
-        '<p class="mb-1 mt-1"><i><u>Kecamatan</u></i></p>' +
-        '<p class="mb-1 mt-1"><b>' + data.sub_district + '</b></p>' +
-        '</div>' +
-        '<div class="list-group-item list-group-item-action flex-column align-items-start pt-1 pb-1 pl-2 pr-2">' +
-        '<p class="mb-1 mt-1"><i><u>Status Zonasi</u></i></p>' +
-        '<button class="btn btn-info btn-sm btn-grafik" data-id_desa="' + data.kode_village + '">View Grafik</button>' +
-        '</div>' +
-
-        '</div>';
-
-    // layer.bindPopup(popup);
 
 }
 
@@ -194,7 +169,7 @@ function style(f) {
 //     };
 //     legend.addTo(mymap);
 // }
-var layers = null;
+var layers;
 layers = L.geoJSON(jsondt, {
     onEachFeature: onEachFeature,
     style: style
@@ -205,6 +180,7 @@ function zoomToFeature(e) {
     let _token = $('meta[name="csrf-token"]').attr('content');
     let data = e.target.feature.properties;
     let dataForm = [];
+    console.log(data);
     if (data.wilayah == 'kelurahan') {
         dataForm.push({ name: "id_desa", value: data.kode_village });
         var kelurahan = data.village;
@@ -278,6 +254,7 @@ $('div.list-group-item button.btn-grafik').click(function (e) {
     $('#featureModal').modal('show');
 
 });
+var geojson;
 $('#filter-data').click(function (e) {
     e.preventDefault();
     // Lyer.removeLayer(init);
@@ -295,7 +272,10 @@ $('#filter-data').click(function (e) {
 
     // console.log(url);
     // alert(url)
-    layers.clearLayers();
+    // layers.clearLayers();
+    // layersFilter.clearLayers()
+    // mymap.removeLayer(layersFilter)
+
     $.ajax({
         url: url,
         async: false,
@@ -332,23 +312,29 @@ $('#filter-data').click(function (e) {
             }
         }
     });
+    if (layers) {
+        mymap.removeLayer(layers)
+    }
     $.getJSON(url, function (data) {
         console.log(dtkec);
         if (wilayah == 'kecamatan') {
+            // mymap.removeLayer(layersFilter);
             $.each(data.features, function (index, val) {
                 var id = val.properties.kode_district;
                 if (dtkec[id] == id) {
-                    layers = L.geoJSON(val, {
+                    console.log('datas' + id);
+                    geojson = L.geoJSON(val, {
                         onEachFeature: onEachFeature,
                         style: style
                     }).addTo(mymap);
                 }
             });
         } else if (wilayah == 'kelurahan') {
+            mymap.removeLayer(geojson);
             $.each(data.features, function (index, val) {
                 var id = val.properties.kode_village;
-                console.log('datas' + dtkec);
                 if (dtkec[id] == id) {
+                    console.log('datas' + id);
                     layers = L.geoJSON(val, {
                         onEachFeature: onEachFeature,
                         style: style

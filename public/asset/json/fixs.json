@@ -3605,7 +3605,8 @@
         "district": "KOTA TEGAL",
         "sub_district": "TEGAL TIMUR",
         "kode_district": "4",
-        "village": "SLEROK"
+        "village": "SLEROK",
+        "kode_village": "29"
       },
       "geometry": {
         "type": "Polygon",
@@ -4384,7 +4385,7 @@
         "sub_district": "TEGAL TIMUR",
         "kode_district": "4",
         "village": "PANGGUNG",
-        "kode_village": ""
+        "kode_village": "29"
       },
       "geometry": {
         "type": "Polygon",
