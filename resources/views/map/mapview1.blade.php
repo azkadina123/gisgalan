@@ -62,7 +62,7 @@
                     <span class="sidebar-close"><i class="fa fa-caret-left"></i></span>
                 </h1>
                 <div class="form-filter">
-                    <form action="">
+                    <form action="{{ url('/getFilter') }}" id="form-filters" method="POST">
                         <div class="form-group">
                             <label>Wilayah</label>
                             <select class="form-control select2bs4" style="width: 100%;" name="wilayah" id="wilayah">
@@ -74,29 +74,23 @@
 
                         <div class="form-group">
                             <label>Nama Penyakit</label>
-                            <select class="form-control select2bs4" style="width: 100%;">
-                                <option selected="selected"></option>
-                                <option>TBC</option>
-                                <option>Pneunomia</option>
-                                <option>HIV/AIDS</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label>Jenis Data</label>
-                            <select class="form-control select2bs4" style="width: 100%;">
-                                <option selected="selected"></option>
-                                <option>Tertinggi</option>
-                                <option>Terendah</option>
+                            <select class="form-control select2bs4" style="width: 100%;" name="penyakit">
+                                <option selected="selected" disabled>-- Pilih Penyakit --</option>
+                                <option value="semua">Semua</option>
+                                <option value="TBC">TBC</option>
+                                <option value="Pneunomia">Pneunomia</option>
+                                <option value="HIV/AIDS">HIV/AIDS</option>
                             </select>
                         </div>
                         <div class="form-group">
                             <label>Usia</label>
-                            <select class="form-control select2bs4" style="width: 100%;">
-                                <option selected="selected"></option>
-                                <option>Balita</option>
-                                <option>Remaja</option>
-                                <option>Dewasa</option>
-                                <option>Lansia</option>
+                            <select class="form-control select2bs4" name="usia" style="width: 100%;">
+                                <option selected="selected" disabled>-- Pilih Usia --</option>
+                                <option value="semua">Semua</option>
+                                <option value="balita">Balita</option>
+                                <option value="remaja">Remaja</option>
+                                <option value="dewasa">Dewasa</option>
+                                <option value="lansia">Lansia</option>
                             </select>
                         </div>
                         <button class="btn btn-primary waves-effect" type="button" id="filter-data">CARI</button>

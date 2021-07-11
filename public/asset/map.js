@@ -38,7 +38,7 @@ $.ajax({
 });
 // console.log(dataKecamatan);
 $(function () {
-    addLegend();
+    // addLegend();
 });
 var init = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
@@ -82,10 +82,10 @@ info.update = function (props) {
 };
 info.addTo(mymap);
 
-function onMapClick(e) {
-    // alert("You clicked the map at " + e.latlng);
-    console.log(e);
-}
+// function onMapClick(e) {
+//     // alert("You clicked the map at " + e.latlng);
+//     console.log(e);
+// }
 
 // mymap.on('click', onMapClick);
 
@@ -102,9 +102,6 @@ function onEachFeature(feature, layer) {
     if (feature.properties && feature.properties.popupContent) {
         popupContent += feature.properties.popupContent;
     }
-    var link = $('#test').click(function () {
-        // alert("test");
-    });
     let data = feature.properties;
     var popup = '<div class="list-group list-group-flush">' +
         // '<a href="#" class="list-group-item list-group-item-action flex-column align-items-start bg-' + data.color_zona + '">' +
@@ -181,49 +178,56 @@ function style(f) {
     }
 }
 
-function addLegend() {
-    var legend = L.control({
-        position: 'bottomright'
-    });
-    legend.onAdd = function (map) {
+// function addLegend() {
+//     var legend = L.control({
+//         position: 'bottomright'
+//     });
+//     legend.onAdd = function (map) {
 
-        var div = L.DomUtil.create('div', 'info legend');
-        div.innerHTML =
-            '<i class="bg-red"></i> 0 - 1.8<br>' +
-            '<i class="bg-yellow"></i> 1.81 - 3<br>' +
-            '<i class="bg-green"></i> Tidak ada Kasus';
+//         var div = L.DomUtil.create('div', 'info legend');
+//         div.innerHTML =
+//             '<i class="bg-red"></i> 0 - 1.8<br>' +
+//             '<i class="bg-yellow"></i> 1.81 - 3<br>' +
+//             '<i class="bg-green"></i> Tidak ada Kasus';
 
-        return div;
-    };
-    legend.addTo(mymap);
-}
-var tes = L.geoJSON(jsondt, {
+//         return div;
+//     };
+//     legend.addTo(mymap);
+// }
+var layers = null;
+layers = L.geoJSON(jsondt, {
     onEachFeature: onEachFeature,
     style: style
 }).addTo(mymap);
 
 function zoomToFeature(e) {
     mymap.fitBounds(e.target.getBounds());
-    console.log(e.target.feature);
     let _token = $('meta[name="csrf-token"]').attr('content');
-    let data = e.target.feature
+    let data = e.target.feature.properties;
+    let dataForm = [];
+    if (data.wilayah == 'kelurahan') {
+        dataForm.push({ name: "id_desa", value: data.kode_village });
+        var kelurahan = data.village;
+    } else {
+        dataForm.push({ name: "id_kecamatan", value: data.kode_district });
+        var kelurahan = '-';
+    }
+    dataForm.push({ name: "_token", value: _token });
+
     $.ajax({
         type: "post",
         url: "/getDataModal",
-        data: {
-            'id_desa': data.properties.kode_village,
-            _token: _token
-        },
+        data: dataForm,
         dataType: "JSON",
         success: function (response) {
-            let kelurahan = response.kelurahan;
+            // let kelurahan = response.kelurahan;
             $('#featureModal').modal('show');
             chart.update({
                 title: {
-                    text: kelurahan.nama.toUpperCase()
+                    text: data.sub_district.toUpperCase()
                 },
                 subtitle: {
-                    text: 'Data Kelurahan'
+                    text: kelurahan
                 },
                 series: [{
                     name: 'KASUS',
@@ -282,16 +286,16 @@ $('#filter-data').click(function (e) {
     let wilayah = $('#wilayah').val();
     alert(wilayah)
     if (wilayah == 'kecamatan') {
-        alert('kecamatan');
         url = url_kecamtan;
     } else {
         url = url_kelurahan;
     }
+    var dtkec = [];
 
 
     // console.log(url);
     // alert(url)
-    tes.clearLayers();
+    layers.clearLayers();
     $.ajax({
         url: url,
         async: false,
@@ -301,9 +305,61 @@ $('#filter-data').click(function (e) {
         }
     });
     // console.log(newjson);
-    L.geoJSON(jsondt, {
-        onEachFeature: onEachFeature,
-        style: style
-    }).addTo(mymap);
+    let url_post = $('form-filters').attr('action');
+    console.log(url_post);
+    let _token = $('meta[name="csrf-token"]').attr('content');
+    var formData = $('#form-filters').serializeArray();
+    formData.push({ name: "_token", value: _token });
+    $.ajax({
+        type: 'post',
+        url: '/getFilter',
+        data: formData,
+        dataType: 'JSON',
+        // async: false,
+        success: function (data) {
+            console.log(data);
+            if (data.wilayah == 'kecamatan') {
+                $.each(data.data, function (index, val) {
+                    dtkec[val] = val;
+                });
+            } else if (data.wilayah == 'kelurahan') {
+                // console.log('desa' + data.data);
+                $.each(data.data, function (index, val) {
+                    dtkec[val] = val;
+                    // console.log(index + '--' + val);
+                });
+
+            }
+        }
+    });
+    $.getJSON(url, function (data) {
+        console.log(dtkec);
+        if (wilayah == 'kecamatan') {
+            $.each(data.features, function (index, val) {
+                var id = val.properties.kode_district;
+                if (dtkec[id] == id) {
+                    layers = L.geoJSON(val, {
+                        onEachFeature: onEachFeature,
+                        style: style
+                    }).addTo(mymap);
+                }
+            });
+        } else if (wilayah == 'kelurahan') {
+            $.each(data.features, function (index, val) {
+                var id = val.properties.kode_village;
+                console.log('datas' + dtkec);
+                if (dtkec[id] == id) {
+                    layers = L.geoJSON(val, {
+                        onEachFeature: onEachFeature,
+                        style: style
+                    }).addTo(mymap);
+                }
+            });
+        }
+    });
+    // L.geoJSON(jsondt, {
+    //     onEachFeature: onEachFeature,
+    //     style: style
+    // }).addTo(mymap);
     // alert('d')
 });

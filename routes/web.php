@@ -73,3 +73,4 @@ Route::get('/maps1', function () {
 Route::get('/maps2', function () {
     return view('maps1');
 });
+Route::any('/getFilter', [DataMaps::class, 'getFilter']);
