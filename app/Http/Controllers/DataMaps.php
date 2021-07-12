@@ -65,13 +65,12 @@ class DataMaps extends Controller
         } else {
             $query->select('kelurahan');
         }
-        if (isset($penyakit)) {
-            if ($penyakit != 'semua')
-                $query->where('nama_penyakit', $penyakit);
+        if (isset($penyakit) && $penyakit != 'semua') {
+            $query->where('nama_penyakit', $penyakit);
         }
-        if (isset($usia)) {
-            if ($penyakit != 'semua')
-                $query->where('usia', $usia);
+        if (isset($usia) && $usia !== 'semua') {
+
+            $query->where('usia', $usia);
         }
         if ($wilayah == 'kecamatan') {
             $query->groupBy('kecamatan');
@@ -80,6 +79,7 @@ class DataMaps extends Controller
         }
         $query->whereYear('created_at', date('Y'));
         $result = $query->get();
+        // $arr_result = array();
         if ($wilayah == 'kecamatan') {
             foreach ($result as $key => $val) {
                 $arr_result[] = $val->kecamatan;
