@@ -72,6 +72,10 @@ class DataMaps extends Controller
 
             $query->where('usia', $usia);
         }
+        if (isset($tanggal) && $tanggal !== 'semua') {
+
+            $query->where('tanggal_input', $tanggal);
+        }
         if ($wilayah == 'kecamatan') {
             $query->groupBy('kecamatan');
         } else {

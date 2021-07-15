@@ -93,6 +93,15 @@
                                 <option value="lansia">Lansia</option>
                             </select>
                         </div>
+                        <div class="form-group">
+                            <label>Semester</label>
+                            <select class="form-control select2bs4" name="tanggal_input" style="width: 100%;">
+                                <option selected="selected" disabled>-- Pilih Semester --</option>
+                                <option value="semua">Semua</option>
+                                <option value="balita">Januari-Juni</option>
+                                <option value="remaja">Juli-Desember</option>
+                            </select>
+                        </div>
                         <button class="btn btn-primary waves-effect" type="button" id="filter-data">CARI</button>
 
                     </form>

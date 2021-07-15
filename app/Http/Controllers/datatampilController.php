@@ -16,7 +16,7 @@ class datatampilController extends Controller
      */
     public function index()
     {
-        $datapenyakit = datapenyakit::all();
+        $datapenyakit = datapenyakit::where('status','Diterima')->get();
          $kelurahan = kelurahan::all();
          $kecamatan = kecamatan::all();
          return view('tampilpeta.datatampil', compact('datapenyakit', 'kelurahan', 'kecamatan'));

@@ -57,7 +57,7 @@ datatampil
                     <th>Tanggal Masuk</th>
                     <th>Kecamatan</th>
                     <th>Kelurahan</th>
-                    <th>Aksi  </th>
+                    
                   </tr>
                   </thead>
                   @php
@@ -80,15 +80,7 @@ datatampil
                           <td>{{$itm->nama}}</td>
                           @endif
                       @endforeach
-                      <td> 
-                        <a class="btn btn-info" href="{{$item->id}}/detail">Konfirmasi</a>
-
-												</form>
-											</div>
-										</div>
-									</div>
-
-                      </td>
+                      
 
                     </tr>
                     
