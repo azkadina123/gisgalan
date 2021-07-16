@@ -20,7 +20,6 @@ class DataMaps extends Controller
         foreach ($kecamatan as $key => $val) {
             $data[$val->id] = $val;
         }
-        // return json_encode(array('data' => null, 'kecamatan' => $data));
         return response()->json([
             'status' => 200,
             'kecamatan' => $data,
@@ -28,8 +27,8 @@ class DataMaps extends Controller
     }
     public function getKecamatanId(Request $request)
     {
-        // $id_desa = $request->id_desa;
         $query = datapenyakit::select(DB::raw("COUNT(*) as count, nama_penyakit"))
+            ->where('status', 'Diterima')
             ->whereYear('created_at', date('Y'));
         if (isset($request->id_desa)) {
             $query->where('kelurahan', $request->id_desa);
@@ -39,15 +38,24 @@ class DataMaps extends Controller
             $query->where('kecamatan', $request->id_kecamatan);
             $get = kecamatan::find($request->id_kecamatan);
         }
-        // ->where('kelurahan', $id_desa)
+        if (isset($request->usia) && $request->usia !== 'semua') {
+            $query->where('usia', $request->usia);
+        }
+        if (isset($request->penyakit) && $request->penyakit != 'semua') {
+            $query->where('nama_penyakit', $request->penyakit);
+        }
+        if (isset($request->bulan) && $request->bulan !== 'semua') {
+            $query->whereMonth('tanggal_input', $request->bulan);
+        }
+        $query->whereYear('tanggal_input', date('Y'));
         $query->groupBy('nama_penyakit');
+
         $chart = $query->get();
 
         $arr_chart = array();
         foreach ($chart as $key => $val) {
             $arr_chart[] = array($val->nama_penyakit, $val->count);
         }
-        // return json_encode(array('data' => null, 'desa' => $get));
         return response()->json([
             'status' => 200,
             'data' => $get,
@@ -59,7 +67,7 @@ class DataMaps extends Controller
         $wilayah = $request->wilayah;
         $penyakit = $request->penyakit;
         $usia = $request->usia;
-        $query = DB::table('datapenyakits');
+        $query = DB::table('datapenyakits')->where('status', 'Diterima');
         if ($wilayah == 'kecamatan') {
             $query->select('kecamatan');
         } else {
@@ -69,21 +77,19 @@ class DataMaps extends Controller
             $query->where('nama_penyakit', $penyakit);
         }
         if (isset($usia) && $usia !== 'semua') {
-
             $query->where('usia', $usia);
         }
-        if (isset($tanggal) && $tanggal !== 'semua') {
-
-            $query->where('tanggal_input', $tanggal);
+        if (isset($request->bulan) && $request->bulan !== 'semua') {
+            $query->whereMonth('tanggal_input', $request->bulan);
         }
         if ($wilayah == 'kecamatan') {
             $query->groupBy('kecamatan');
         } else {
             $query->groupBy('kelurahan');
         }
-        $query->whereYear('created_at', date('Y'));
+        $query->whereYear('tanggal_input', date('Y'));
         $result = $query->get();
-        // $arr_result = array();
+        $arr_result = array();
         if ($wilayah == 'kecamatan') {
             foreach ($result as $key => $val) {
                 $arr_result[] = $val->kecamatan;
