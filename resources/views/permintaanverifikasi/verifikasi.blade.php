@@ -25,12 +25,12 @@ permintaanverifikasi
 @section('header-content')
 <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Daftar Akun</h1>
+            <h1>Permintaan Verifikasi</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Daftar Akun</li>
+              <li class="breadcrumb-item active">Permintaan Verifikasi</li>
             </ol>
           </div>
         </div>
@@ -42,7 +42,7 @@ permintaanverifikasi
           <div class="col-12">
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">DataTable with minimal features & hover style</h3>
+                <h3 class="card-title"></h3>
                 <a href="{{route('tampilpeta.index')}}"class="btn btn-sm btn-primary float-sm-right">Data Tampil</a>
 
               </div>

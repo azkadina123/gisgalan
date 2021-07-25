@@ -50,6 +50,8 @@ Route::resource('/riwayat', 'riwayatdataController');
 
 Route::resource('/riwayat', 'riwayatdatapenyakitController');
 
+Route::resource('/masyarakat', 'detaildatatampilController');
+
 
 
 Route::get('/peta', function () {
@@ -58,6 +60,7 @@ Route::get('/peta', function () {
 Route::get('/tes', function () {
     return view('masyarakat/tes');
 });
+
 
 Auth::routes();
 

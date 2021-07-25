@@ -42,7 +42,7 @@ keloladatapenyakit
           <div class="col-12">
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">DataTable with minimal features & hover style</h3>
+                <h3 class="card-title"></h3>
                 <a href="keloladatapenyakit/create"class="btn btn-sm btn-primary float-sm-right">Tambah Data Penyakit</a>
               </div>
               <!-- /.card-header -->

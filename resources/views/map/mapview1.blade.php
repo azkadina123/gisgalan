@@ -134,6 +134,8 @@
                     <div id="chart"></div>
                 </div>
                 <div class="modal-footer">
+                    <a href="{{route('masyarakat.index')}}"class="btn btn-sm btn-primary float-sm-right">Detail Data</a>
+
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 </div>
             </div><!-- /.modal-content -->

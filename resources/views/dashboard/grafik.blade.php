@@ -43,12 +43,11 @@ grafik
             <!-- small box -->
             <div class="small-box bg-info">
               <div class="inner">
-                <h3>150</h3>
+                <h3>{{DB::table('datapenyakits')->where('nama_penyakit','TBC')->count()}}<sup style="font-size: 20px"></sup></h3>
 
-                <p>New Orders</p>
+                <p>TBC</p>
               </div>
               <div class="icon">
-                <i class="ion ion-bag"></i>
               </div>
               <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
@@ -58,12 +57,11 @@ grafik
             <!-- small box -->
             <div class="small-box bg-success">
               <div class="inner">
-                <h3>53<sup style="font-size: 20px">%</sup></h3>
+                <h3>{{DB::table('datapenyakits')->where('nama_penyakit','Pneunomia')->count()}}<sup style="font-size: 20px"></sup></h3>
 
-                <p>Bounce Rate</p>
+                <p>Pneunomia</p>
               </div>
               <div class="icon">
-                <i class="ion ion-stats-bars"></i>
               </div>
               <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
@@ -73,12 +71,11 @@ grafik
             <!-- small box -->
             <div class="small-box bg-warning">
               <div class="inner">
-                <h3>44</h3>
+                <h3>{{DB::table('datapenyakits')->where('nama_penyakit','HIV/AIDS')->count()}}<sup style="font-size: 20px"></sup></h3>
 
-                <p>User Registrations</p>
+                <p>HIV/AIDS</p>
               </div>
               <div class="icon">
-                <i class="ion ion-person-add"></i>
               </div>
               <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
@@ -115,7 +112,7 @@ grafik
 </script>
 
 <script src="https://code.highcharts.com/highcharts.js"></script>
-<script>
+{{-- <script>
   Highcharts.chart('chart', {
     chart: {
         type: 'pie',
@@ -125,10 +122,10 @@ grafik
         }
     },
     title: {
-        text: 'Contents of Highsoft\'s weekly fruit delivery'
+        text: 'Update Setiap Hari'
     },
     subtitle: {
-        text: '3D donut in Highcharts'
+        text: ''
     },
     plotOptions: {
         pie: {
@@ -146,6 +143,6 @@ grafik
         ]
     }]
 });
-</script>
+</script> --}}
 
 @endsection

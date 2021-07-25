@@ -6,7 +6,7 @@
       <span class="brand-text font-weight-light">PEMETAAN PENYAKIT</span>
     </a>
 
-    <!-- Sidebar -->
+    
     <div class="sidebar">
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
@@ -14,7 +14,7 @@
           <img src="{{ asset('tamplate/dist/img/avatar5.png') }}" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Adminn (RS,Puskesmas,Klinik)</a>
+          <a href="#" class="d-block">{{ Auth::user()->name }}</a>
         </div>
       </div>
 
@@ -38,6 +38,14 @@
               </p>
             </a>
           </li>
+          <li class="nav-item">
+            <a href="/maps" class="nav-link">
+              <i class="nav-icon fas fa-map-marked-alt"></i>
+              <p>
+                Lihat Peta
+              </p>
+            </a>
+          </li>
           @if (Auth::user()->rule === '1')
           <li class="nav-item">
             <a href="/permintaanverifikasi" class="nav-link">
@@ -56,14 +64,14 @@
               </p>
             </a>
           </li>    
-          <li class="nav-item">
+          {{-- <li class="nav-item">
             <a href="{{route('riwayat.index')}}" class="nav-link">
               <i class="nav-icon fas fa-history"></i>
               <p>
                 Riwayat Data
               </p>
             </a>
-          </li>    
+          </li>     --}}
           
           @elseif (Auth::user()->rule === '2')
                         <!-- puskesmas rs klinik -->
@@ -81,14 +89,14 @@
               Status Permintaan
             </a>
           </li>
-          <li class="nav-item">
+          {{-- <li class="nav-item">
             <a href="{{route('riwayat.index')}}" class="nav-link">
               <i class="nav-icon fas fa-history"></i>
               <p>
                 Riwayat Data
               </p>
             </a>
-          </li>    
+          </li>     --}}
           @else
           @endif          
      

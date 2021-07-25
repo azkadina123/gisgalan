@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
+                <center> <h2><div class="card-header">{{ __('Login') }}</div></h2></center>
                 <center><img style="width:80px;high:80px" src="{{ asset('image/logotegal.png') }}" alt=""></center>
                 <center><h1>Selamat Datang</h1></center>
                 <div class="card-body">
@@ -59,9 +59,9 @@
                                 </button>
 
                                 @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
+                                    {{-- <a class="btn btn-link" href="{{ route('password.request') }}">
                                         {{ __('Forgot Your Password?') }}
-                                    </a>
+                                    </a> --}}
                                 @endif
                             </div>
                         </div>

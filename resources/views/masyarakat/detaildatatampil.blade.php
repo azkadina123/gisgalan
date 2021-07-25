@@ -1,6 +1,6 @@
-@extends('layouts/master')
+@extends('masyarakat/master')
 @section('title')
-statuspermintaan
+detaildata
 
 @endsection
   
@@ -22,28 +22,28 @@ statuspermintaan
 
   
 
-@section('header-content')
+{{-- @section('header-content')
 <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Status Permintaan</h1>
+            <h1>Detail Data</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Status Permintaan</li>
             </ol>
           </div>
         </div>
        
-@endsection  
+@endsection   --}}
 
-@section('content')
+{{-- @section('content') --}}
 <div class="row">
           <div class="col-12">
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title"></h3>
-                
+                <center>
+                <h2>Detail Data</h2>
+                </center>
+
               </div>
               <!-- /.card-header -->
               <div class="card-body">
@@ -57,14 +57,13 @@ statuspermintaan
                     <th>Tanggal Masuk</th>
                     <th>Kecamatan</th>
                     <th>Kelurahan</th>
-                    <th>Status</th>
+                    
                   </tr>
                   </thead>
-                  <tbody>
-                    @php
-                        $i=1;
+                  @php
+                        $i = 1
                     @endphp
-                    @foreach ($datapenyakit as $item)
+                  @foreach ($datapenyakit as $item)
                     <tr>
                       <td>{{$i++}}</td>
                       <td>{{$item->nama_penyakit}}</td>
@@ -81,17 +80,13 @@ statuspermintaan
                           <td>{{$itm->nama}}</td>
                           @endif
                       @endforeach
-                      @if ($item->status==="Diterima")
-                        <td><span class="badge badge-succes">Diterima</span></td>
-                      @elseif($item->status==="Ditolak")
-                        <td><span class="badge badge-danger">Ditolak</span></td>
-                      @else
-                          <td><span class="badge badge-warning">Belum dikonfirmasi</span></td>
-                      @endif
+                      
 
+                    </tr>
+                    
+
+                    
                     @endforeach
-                    </tbody>
-    
                 </table>
               </div>
               <!-- /.card-body -->
@@ -124,7 +119,7 @@ statuspermintaan
         </div>
         <!-- /.modal-dialog -->
       </div>
-@endsection  
+{{-- @endsection   --}}
 
   
 

@@ -42,7 +42,7 @@ keloladataakun
           <div class="col-12">
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">DataTable with minimal features & hover style</h3>
+                <h3 class="card-title"></h3>
                 <a href="keloladataakun/create"class="btn btn-sm btn-primary float-sm-right">Tambah Akun</a>
               </div>
               <!-- /.card-header -->
@@ -66,7 +66,6 @@ keloladataakun
                       <td>{{$item->nama_instansi}}</td>
                       <td>{{$item->jenis_instansi}}</td>
                       <td>
-                        <a class="btn btn-info" href="{{$item->id}}/detail">Detail</a>
                         {{-- <a class="btn btn-primary" href="/keloladatapenyakit/{{$item->id}}/edit">Edit</a> --}}
                         <button type="button" class="btn btn-danger waves-effect" data-toggle="modal" data-target="#smallModal{{$item->id}}">Hapus</button>
 										<div class="modal fade" id="smallModal{{$item->id}}" tabindex="-1" role="dialog">

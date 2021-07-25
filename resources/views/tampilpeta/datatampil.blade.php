@@ -25,7 +25,7 @@ datatampil
 @section('header-content')
 <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Daftar Akun</h1>
+            <h1>Data Tampil</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -42,7 +42,7 @@ datatampil
           <div class="col-12">
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">DataTable with minimal features & hover style</h3>
+                <h3 class="card-title"></h3>
 
               </div>
               <!-- /.card-header -->

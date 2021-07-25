@@ -20,7 +20,7 @@ editdatapenyakit
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="card">
                         <div class="header">
-                            <h2>Tambah Data Penyakit</h2>
+                            <h2>Edit Data Penyakit</h2>
                         </div>
                         <div class="body">
 							@csrf
@@ -145,7 +145,7 @@ editdatapenyakit
                                         </select>
                                     </div>
                                 </div>
-                            <button class="btn btn-primary waves-effect" type="submit">SAVE</button>
+                            <button class="btn btn-primary waves-effect" type="submit">SIMPAN</button>
                         </form>
                     </div>    
                 </div>
